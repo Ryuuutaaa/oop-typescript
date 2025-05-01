@@ -1,6 +1,7 @@
 describe("Class", () => {
   it("Should can crate class", () => {
     class Costumer {
+      
       constructor(){
         console.log("Crate new costumer");
       }
