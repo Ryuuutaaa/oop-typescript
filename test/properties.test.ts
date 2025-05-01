@@ -6,27 +6,31 @@ describe("Properties", () => {
         age? : number = 10
 
 
-        constructor(id : number, name : string, age : number){
+        constructor(id : number, name : string){
             this.id = id;
             this.name = name;
-            this.age = age;
         }
 
         sayHello(name : string){
-            console.info(`Hello ${name}, my name is ${name}`);
+            console.info(`Hello ${name}, my name is ${this.name}`);
         }
     }
 
     it("Sholud can have properties", () => {
 
-        const costumer = new Customer(10,"rau", 23);
+        const costumer = new Customer(10,"rau",);
 
         console.info(costumer);
         console.info(costumer.id)
         console.info(costumer.name);
         console.info(costumer.age);
 
-        costumer.sayHello("Rafi")
 
+    })
+
+    it("should can have method", () => {
+        const costumer =  new Customer(1, "Eko")
+
+        costumer.sayHello("Rafi")
     })
 })
