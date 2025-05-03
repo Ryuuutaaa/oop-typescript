@@ -13,7 +13,8 @@ describe("Methond Overriding", () => {
 
     class Manager extends Employee{
         sayHello(name: string): void {
-            console.info(`Hello ${name}, my name is ${this.name}, I am you manager this now`)
+            super.sayHello(name);
+            console.info("At Manager right now");
         }
     }
 
