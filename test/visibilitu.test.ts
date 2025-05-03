@@ -1,7 +1,7 @@
 describe("Visibility", () => {
 
     class Counter {
-        private counter : number = 0;
+        protected counter : number = 0;
 
         public increment() : void{
             this.counter++;
@@ -12,9 +12,24 @@ describe("Visibility", () => {
         }
     }
 
+    class DoubleCounter extends Counter{
+        public increment(): void {
+            this.counter += 2;
+        }
+    }
 
-    it("Should Visibity", () => {
+
+    it("Should Visibity Private", () => {
         const counter =  new Counter();
+        counter.increment();
+        counter.increment();
+        counter.increment();
+        console.info(counter.getCounter());
+    })
+
+    
+    it("Should Visibity Private", () => {
+        const counter =  new DoubleCounter();
         counter.increment();
         counter.increment();
         counter.increment();
