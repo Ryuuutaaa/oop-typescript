@@ -2,7 +2,7 @@ describe("Inheritance", () => {
 
 
 
-    // parrent
+    // parrent class
     class Employee {
         name : string;
 
@@ -12,6 +12,8 @@ describe("Inheritance", () => {
     }
 
     class Managet extends Employee {
+
+        
 
     }
 
