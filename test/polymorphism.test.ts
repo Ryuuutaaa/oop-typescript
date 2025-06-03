@@ -10,7 +10,17 @@ describe('Polymorphis', () => {
     class VicePresident extends Manager{ }
 
     function sayHello(employee : Employee): void{
-        console.info(`Hello ${employee.name}`);
+        if(employee instanceof VicePresident){
+            const vp = employee as VicePresident; 
+           console.info(`heelo vp ${vp.name}`);
+
+        }else if(employee instanceof Manager){
+            const manager = employee as Manager; 
+            console.info(`heelo manajer ${manager.name}`)
+
+        }else{
+            console.info(`heelo employee ${employee.name}`)
+        }
     }
 
 
@@ -27,5 +37,11 @@ describe('Polymorphis', () => {
         sayHello(employee = new Employee("Rafi"));
         sayHello(employee = new Manager("Rafi"));
         sayHello(employee = new VicePresident("Rafi"));
+    })
+
+    it("should supprot method parameter plymorephism", () => {
+        sayHello(new Employee("Eko"))
+        sayHello(new Manager("budi"))
+        sayHello(new VicePresident("Joko"))
     })
 })
