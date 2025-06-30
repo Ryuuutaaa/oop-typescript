@@ -18,4 +18,4 @@ describe("Instance Of", () => {
         expect(eko instanceof Manager).toBe("true");
         expect(eko instanceof Employee).toBe("false");
     })
-})
+}) 
